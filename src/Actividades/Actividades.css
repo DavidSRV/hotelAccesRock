@@ -1,0 +1,22 @@
+.columna{
+    width: 100%;
+}
+.columna2{
+    width: 75%;
+}
+.colunma3{
+    width: 50%;
+}
+.columna4{
+    width: 25%;
+}
+.columna5{
+    width: 0%;
+}
+
+.columnacontainer{
+background-color: rgb(136, 190, 201);
+height: 350px;
+opacity: 0.8;
+}
+
