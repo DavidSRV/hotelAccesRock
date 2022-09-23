@@ -1,27 +1,39 @@
 import { useState } from "react";
 import { ServicioReserva } from "../../services/ServicioReserva";
+import Swal from "sweetalert2";
 
-export default function Form() {
-  const [entrada, setEntrada] = useState();
-  const [salida, setSalida] = useState();
-  const [numAdultos, setNumAdultos] = useState();
-  const [numBendi, setNumBendi] = useState();
+export default function Form({ idHabitacion }) {
+  const [entrada, setEntrada] = useState("");
+  const [salida, setSalida] = useState("");
+  const [numAdultos, setNumAdultos] = useState("");
+  const [numBendi, setNumBendi] = useState("");
 
   const EnvioForm = (e) => {
     e.preventDefault();
     let data = {
-      idHabitacion: "6321ef745a1931ff38e7c2c3",
+      idHabitacion: idHabitacion,
       fechaEntrada: entrada,
       fechaSalida: salida,
       numeroNinos: numBendi,
       numeroAdultos: numAdultos,
     };
+
+    ServicioReserva(data).then(function (res) {
+      console.log(res);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Exito en la reserva",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
   };
 
   return (
     <div>
       <form
-        className="w-50 mt-5"
+        className="w-25 mt-5 "
         style={{
           background: "black",
           padding: "30px",

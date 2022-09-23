@@ -1,4 +1,8 @@
 export async function ServicioReserva(datos){
+
+    console.log("Estamos en el servicio")
+    console.log(datos)
+
     const URI = "https://servercomfama.herokuapp.com/viajescomfama/reserva";
 
     const PETICION ={
