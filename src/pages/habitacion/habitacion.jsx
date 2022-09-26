@@ -28,7 +28,7 @@ export default function Habitacion() {
                 return (
                     <div>
                         <h1>{habitacion.nombre}</h1>
-                        <img src={habitacion.imagenes[0]}></img>
+                        <img alt="Habitación" src={habitacion.imagenes[0]}></img>
                     </div>
                 )
             })

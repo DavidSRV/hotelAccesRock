@@ -1,13 +1,14 @@
 import { ServicioHabitacion } from "../../services/ServicioHabitacion";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
+import { useId } from "../../context/IdProvider";
+import nick from "../../assets/img/logo-Nickelodeon.png"
 
-export default function Habitaciones({}) {
+export default function Habitaciones() {
   const [estadoCarga, setEstadoCarga] = useState(true);
   const [habitaciones, setHabitacion] = useState(null);
-  const [idHabitacion, setIdHabitacion] = useState("")
-
-
+ 
+  const {setId} = useId()
   
   useEffect(() => {
     ServicioHabitacion().then((res) => {
@@ -27,35 +28,36 @@ export default function Habitaciones({}) {
     }else {
       return (
     
-<div className="mt-5">
+<div className="">
   <div className="container-fluid my-5">
     <div className="row">
       <div className="col-12">
-        <h1 style={{color:'white'}}>Habitaciones: </h1>
+        <h1 style={{ color:"white" , textAlign:"center"}}>Reserva ya tu habitacion</h1>
       </div>
     </div>
-    <div className="row row-cols-1 row-cols-md-3 g-2">
+    <div className="row row-cols-1 row-cols-md-2 g-2">
       {habitaciones.datos.map(function (habitacion) {
         return (
           <>
             <div className="col">
-              <div className="card h-100">
+              <div className="card h-80">
                 <img
                   src={habitacion.imagenes[0]}
                   alt="img"
-                  height="250px"
+                  height="200px"
                   className=""
                 />
                 <h3 className="text-center">{habitacion.nombre}</h3>
                 <p className="mx-2">{habitacion.descripcion}</p>
                 <h2 className="text-start">${habitacion.valorNoche}</h2>
-                <div className="mx-2 d-inline">
+                <div className="mx-3 d-inline">
                   <i className="bi bi-person-fill"></i>
                   <i className="bi bi-person-fill"></i>
+                  <i className="bi bi-person-fill"></i>                  <i className="bi bi-person-fill"></i>
                   <i className="bi bi-person-fill"></i>
                 </div>
-              <button onClick={() => {
-                setIdHabitacion(habitacion._id)
+              <button style={{color: "white"  ,background: "hsl(24, 90%, 50%)",}} onClick={() => {
+                setId(habitacion._id)
                 Swal.fire({
                     position: 'center',
                     icon: "success",
@@ -63,7 +65,7 @@ export default function Habitaciones({}) {
                     showConfirmButton: false,
                     timer: 2500
                 })
-              }} className="btn btn-primary">Reservar</button>
+              }} className="btn ">Reservar</button>
               </div>
             </div>
           </>

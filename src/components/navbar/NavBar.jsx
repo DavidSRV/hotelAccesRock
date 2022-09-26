@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import nick  from "../../assets/img/logo-Nickelodeon.png"
 
 export default function Navbar() {
   return (
@@ -11,7 +12,7 @@ export default function Navbar() {
               className="linkStyle"
               to="/"
             >
-              HotelAccesRock
+              <img src={nick} width='200px' alt="" />
             </Link>
           </a>
           <button

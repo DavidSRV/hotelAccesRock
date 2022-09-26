@@ -1,4 +1,3 @@
-import { ServicioHabitacion } from './services/ServicioHabitacion';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/NavBar';
 import Habitacion from './pages/habitacion/habitacion';

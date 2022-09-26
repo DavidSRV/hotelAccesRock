@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 body{
-    background-image: url('../../assets/img/intercontinental-mar-menor-hotel-night-493.jpg');
+    background-image: url('../../assets/img/Hotel-Nickelodeon-1.jpeg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Rubik', sans-serif;
 }
